@@ -1,7 +1,6 @@
 package com.example.melas.cryptex;
 
 import android.content.Context;
-import android.icu.text.NumberFormat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.melas.cryptex.models.Currency;
+import com.example.melas.cryptex.utilities.CurrencyFormatter;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.CurrencyHolder>{
 
@@ -39,17 +38,15 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.Curren
     public void onBindViewHolder(CurrencyHolder holder, int position) {
         Currency currency = currencyList.get(position);
         holder.currencyName.setText(currency.getShortCode());
-        NumberFormat format;
-        String btc = String.valueOf(currency.getBtcConversionRate());
-        String eth = String.valueOf(currency.getEthConversionRate());
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            format = NumberFormat.getCurrencyInstance(Locale.getDefault());
-            format.setCurrency(android.icu.util.Currency.getInstance(currency.getName()));
-            btc = format.format(currency.getBtcConversionRate());
-            eth = format.format(currency.getEthConversionRate());
-        }
-        holder.btcValue.setText(btc);
-        holder.ethValue.setText(eth);
+
+        holder.btcValue.setText(
+                CurrencyFormatter.formatCurrency(currency.getBtcConversionRate(),
+                        currency.getName())
+        );
+        holder.ethValue.setText(
+                CurrencyFormatter.formatCurrency(currency.getEthConversionRate(),
+                        currency.getName())
+        );
     }
 
     @Override

@@ -13,11 +13,8 @@ import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.melas.cryptex.models.ApiResponse;
 import com.example.melas.cryptex.models.Currency;
@@ -35,22 +32,30 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements CurrencyAdapter.ListItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
+    private final static String QUERY1 = "BTC,ETH";
+    private final static String QUERY2 =
+            "USD,NGN,GBP,AUD,CAD,EUR,CNY,GHS,ILS,JMD,JPY,KES,MUR,MXN,NOK,QAR,RUB,RWF,SEK,ZAR";
+    public static final String DATA_CURRENCY = "currency";
+
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView currencyRecyclerView;
     private TextView errorMessageTextView;
     private ArrayList<Currency> currencyList;
     private CurrencyAdapter adapter;
-    private final static String QUERY1 = "BTC,ETH";
-    private final static String QUERY2 =
-            "USD,NGN,GBP,AUD,CAD,EUR,CNY,GHS,ILS,JMD,JPY,KES,MUR,MXN,NOK,QAR,RUB,RWF,SEK,ZAR";
     private ArrayList<String> userChoices;
     private ApiInterface apiInterface;
-    public static final String DATA_CURRENCY = "currency";
 
     private SwipeRefreshLayout.OnRefreshListener swipeListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
             getCurrencies();
+        }
+    };
+
+    private View.OnClickListener fabListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startAddCurrencyActivity();
         }
     };
 
@@ -60,30 +65,21 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setUI();
+        getUserChoices();
+        getCurrencies();
+    }
 
+    public void setUI() {
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         currencyRecyclerView = findViewById(R.id.currency_recycler_view);
         errorMessageTextView = findViewById(R.id.error_message_text_view);
         currencyList = new ArrayList<>();
-        if (!isNetworkAvailable()) {
-            errorMessageTextView.setText(R.string.network_error);
-            errorMessageTextView.setVisibility(View.VISIBLE);
-            swipeRefreshLayout.setRefreshing(false);
-            return;
-        }
         swipeRefreshLayout.setOnRefreshListener(swipeListener);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         userChoices = new ArrayList<>();
-        getUserChoices();
-        getCurrencies();
-
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startAddCurrencyActivity();
-            }
-        });
+        fab.setOnClickListener(fabListener);
     }
 
     public boolean isNetworkAvailable() {
@@ -98,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
         Map<String, ?> preferencesMap = preferences.getAll();
         userChoices.clear();
         for (Map.Entry<String, ?> entry : preferencesMap.entrySet()) {
-            Log.i("PREF CHECK", entry.getKey() + " - " + entry.getValue());
             if(entry.getValue().toString().equals("true")) {
                 userChoices.add(entry.getKey());
             }
@@ -107,15 +102,19 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
     }
 
     private void getCurrencies() {
+        if (!isNetworkAvailable()) {
+            showErrors(getString(R.string.network_error));
+            return;
+        }
+
         swipeRefreshLayout.setRefreshing(true);
-        errorMessageTextView.setVisibility(View.INVISIBLE);
+        hideErrors();
+
         Call<ApiResponse> call = apiInterface.getCurrencies(QUERY1, QUERY2);
         call.enqueue(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                Log.i("API CALLED", "GOT HERE");
                 if(response.isSuccessful()) {
-                    Log.i("API CALLED", "GOT HERE SUCCESS");
                     currencyList.clear();
                     Set<Map.Entry<String, Double>> btcSet = response.body().getBTC().entrySet();
                     Iterator btcIterator = btcSet.iterator();
@@ -144,22 +143,31 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
                     currencyRecyclerView.setHasFixedSize(true);
                     adapter = new CurrencyAdapter(currencyList, MainActivity.this);
                     currencyRecyclerView.setAdapter(adapter);
-                    errorMessageTextView.setVisibility(View.INVISIBLE);
+
+                    hideErrors();
+
                     swipeRefreshLayout.setRefreshing(false);
+
                 } else {
-                    errorMessageTextView.setText(R.string.error_message);
-                    errorMessageTextView.setVisibility(View.VISIBLE);
-                    swipeRefreshLayout.setRefreshing(false);
+                    showErrors(getString(R.string.error_message));
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
-                errorMessageTextView.setText(t.getMessage());
-                errorMessageTextView.setVisibility(View.VISIBLE);
-                swipeRefreshLayout.setRefreshing(false);
+                showErrors(t.getMessage());
             }
         });
+    }
+
+    private void showErrors(String message) {
+        errorMessageTextView.setText(message);
+        errorMessageTextView.setVisibility(View.VISIBLE);
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
+    private void hideErrors() {
+        errorMessageTextView.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -177,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-        Log.i("Changed Pref", "Called");
         getUserChoices();
         getCurrencies();
     }

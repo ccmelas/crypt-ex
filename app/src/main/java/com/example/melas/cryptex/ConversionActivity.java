@@ -1,6 +1,5 @@
 package com.example.melas.cryptex;
 
-import android.icu.text.NumberFormat;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.melas.cryptex.models.Currency;
-
-import java.util.Locale;
+import com.example.melas.cryptex.utilities.CurrencyFormatter;
 
 public class ConversionActivity extends AppCompatActivity {
 
@@ -22,7 +20,6 @@ public class ConversionActivity extends AppCompatActivity {
     private EditText currencyInput;
     private TextView btcTextView;
     private TextView ethTextView;
-    private NumberFormat format;
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -41,16 +38,8 @@ public class ConversionActivity extends AppCompatActivity {
             double btcValue = doubleValue * currency.getBtcConversionRate();
             double ethValue = doubleValue * currency.getEthConversionRate();
 
-            String btc = String.format(Locale.getDefault(),"%.2f", btcValue);
-            String eth = String.format(Locale.getDefault(),"%.2f", btcValue);
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                format = NumberFormat.getCurrencyInstance(Locale.getDefault());
-                format.setCurrency(android.icu.util.Currency.getInstance(currency.getName()));
-                btc = format.format(btcValue);
-                eth = format.format(ethValue);
-            }
-            ethTextView.setText(eth);
-            btcTextView.setText(btc);
+            ethTextView.setText(CurrencyFormatter.formatCurrency(ethValue, currency.getName()));
+            btcTextView.setText(CurrencyFormatter.formatCurrency(btcValue, currency.getName()));
         }
 
         @Override
@@ -76,22 +65,23 @@ public class ConversionActivity extends AppCompatActivity {
         }
         currencyInput = findViewById(R.id.currency_input);
         currencyInput.setText(getString(R.string.conversion_start_value));
-
-
-        String btc = String.valueOf(currency.getBtcConversionRate());
-        String eth = String.valueOf(currency.getEthConversionRate());
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            format = NumberFormat.getCurrencyInstance(Locale.getDefault());
-            format.setCurrency(android.icu.util.Currency.getInstance(currency.getName()));
-            btc = format.format(currency.getBtcConversionRate());
-            eth = format.format(currency.getEthConversionRate());
-        }
+        currencyInput.setSelection(currencyInput.getText().length());
 
         btcTextView = findViewById(R.id.btc_value);
-        btcTextView.setText(btc);
         ethTextView = findViewById(R.id.eth_value);
-        ethTextView.setText(eth);
 
+        ethTextView.setText(
+                CurrencyFormatter.formatCurrency(
+                        currency.getEthConversionRate(),
+                        currency.getName()
+                )
+        );
+        btcTextView.setText(
+                CurrencyFormatter.formatCurrency(
+                        currency.getBtcConversionRate(),
+                        currency.getName()
+                )
+        );
         currencyInput.addTextChangedListener(textWatcher);
     }
 
