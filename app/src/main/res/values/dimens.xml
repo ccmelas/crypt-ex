@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="currency_image_height">24dp</dimen>
+    <dimen name="currency_card_corner_radius">12dp</dimen>
+    <dimen name="currency_card_margin_bottom">10dp</dimen>
+</resources>

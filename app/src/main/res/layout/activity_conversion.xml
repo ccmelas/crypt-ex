@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.melas.cryptex.ConversionActivity"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/currency_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/conversion_start_value"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/btc_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_bitcoin"
+        android:drawablePadding="16dp"
+        tools:text="127,000,000"
+        android:layout_marginBottom="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/eth_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_ethereum"
+        android:drawablePadding="16dp"
+        tools:text="127,000,000"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"/>
+</LinearLayout>

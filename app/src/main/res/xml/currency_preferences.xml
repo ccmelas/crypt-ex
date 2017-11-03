@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="NGN"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Naira"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="USD"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="US Dollars"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="GBP"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Pound Sterling"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="AUD"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Australian Dollars"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="CAD"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Canadian Dollars"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="EUR"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="European Euro"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="CNY"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Chinese Yen"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="GHS"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Ghanaian Cedi"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="JMD"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Jamaican Dollar"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="JPY"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Japanese Yen"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="ILS"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Israeli New Shekel"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="KES"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Kenyan Shilling"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="MUR"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Mauritian Rupee"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="MXN"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Mexican Peso"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="NOK"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Norwegian Krone"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="QAR"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Qatari Riyal"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="RUB"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Russian Ruble"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="RWF"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Rwandan Franc"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="SEK"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="Swedish krona"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="ZAR"
+        android:summaryOff="@string/currency_summary_off"
+        android:summaryOn="@string/currency_summary_on"
+        android:title="South African Rand"/>
+</PreferenceScreen>

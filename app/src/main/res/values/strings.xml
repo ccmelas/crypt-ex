@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CryptEx</string>
+    <string name="action_settings">Settings</string>
+    <string name="error_message">An error occurred. Please swipe down to refresh</string>
+    <string name="network_error">Network error. Check your network and swipe down to reload</string>
+    <string name="currency_summary_off">Not Tracking</string>
+    <string name="currency_summary_on">Tracking</string>
+    <string name="ethereum_icon">Ethereum Icon</string>
+    <string name="bitcoin_icon">Bitcoin Icon</string>
+    <string name="conversion_start_value">1</string>
+    <string name="add_currency_label">Manage Currencies</string>
+    <string name="conversion_activity_label">Crypto Calculator</string>
+</resources>
