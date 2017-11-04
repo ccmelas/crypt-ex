@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
                                 Map.Entry<String, Double> ethEntry = (Map.Entry) ethIterator.next();
                                 if(key.equals(ethEntry.getKey())) {
                                     double ethValue = ethEntry.getValue();
-                                    Currency currency = new Currency(key, key, key, btcValue, ethValue);
+                                    Currency currency = new Currency(key, btcValue, ethValue);
                                     currencyList.add(currency);
                                 }
                             }

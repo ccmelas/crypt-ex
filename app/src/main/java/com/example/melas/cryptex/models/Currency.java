@@ -5,23 +5,17 @@ import android.os.Parcelable;
 
 public class Currency implements Parcelable{
     private String name;
-    private String shortCode;
-    private String symbol;
     private double btcConversionRate;
     private double ethConversionRate;
 
-    public Currency(String name, String shortCode, String symbol, double btcConversionRate, double ethConversionRate) {
+    public Currency(String name, double btcConversionRate, double ethConversionRate) {
         this.name = name;
-        this.shortCode = shortCode;
-        this.symbol = symbol;
         this.btcConversionRate = btcConversionRate;
         this.ethConversionRate = ethConversionRate;
     }
 
     protected Currency(Parcel in) {
         name = in.readString();
-        shortCode = in.readString();
-        symbol = in.readString();
         btcConversionRate = in.readDouble();
         ethConversionRate = in.readDouble();
     }
@@ -46,22 +40,12 @@ public class Currency implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
-        parcel.writeString(shortCode);
-        parcel.writeString(symbol);
         parcel.writeDouble(btcConversionRate);
         parcel.writeDouble(ethConversionRate);
     }
 
     public String getName() {
         return name;
-    }
-
-    public String getShortCode() {
-        return shortCode;
-    }
-
-    public String getSymbol() {
-        return symbol;
     }
 
     public double getBtcConversionRate() {

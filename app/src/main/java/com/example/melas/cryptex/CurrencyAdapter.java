@@ -37,7 +37,7 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.Curren
     @Override
     public void onBindViewHolder(CurrencyHolder holder, int position) {
         Currency currency = currencyList.get(position);
-        holder.currencyName.setText(currency.getShortCode());
+        holder.currencyName.setText(currency.getName());
 
         holder.btcValue.setText(
                 CurrencyFormatter.formatCurrency(currency.getBtcConversionRate(),
