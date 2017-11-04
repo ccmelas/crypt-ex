@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.melas.cryptex.ConversionActivity"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="@dimen/conversion_screen_padding">
 
     <EditText
         android:id="@+id/currency_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/conversion_screen_text_views_bottom_margin"
         android:text="@string/conversion_start_value"
-        android:textSize="24sp"/>
+        android:textSize="@dimen/conversion_result_text_size"/>
 
     <TextView
         android:id="@+id/btc_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_bitcoin"
-        android:drawablePadding="16dp"
+        android:layout_marginBottom="@dimen/conversion_screen_text_views_bottom_margin"
         tools:text="127,000,000"
-        android:layout_marginBottom="16dp"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        style="@style/conversion_result_text"/>
 
     <TextView
         android:id="@+id/eth_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_ethereum"
-        android:drawablePadding="16dp"
         tools:text="127,000,000"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        style="@style/conversion_result_text"/>
 </LinearLayout>

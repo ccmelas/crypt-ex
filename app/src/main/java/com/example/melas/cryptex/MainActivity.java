@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
 
     private final static String QUERY1 = "BTC,ETH";
     private final static String QUERY2 =
-            "USD,NGN,GBP,AUD,CAD,EUR,CNY,GHS,ILS,JMD,JPY,KES,MUR,MXN,NOK,QAR,RUB,RWF,SEK,ZAR";
+            "USD,NGN,AUD,CAD,CNY,EUR,GBP,GHS,ILS,JMD,JPY,KES,MUR,MXN,NOK,QAR,RUB,RWF,SEK,ZAR";
     public static final String DATA_CURRENCY = "currency";
 
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements CurrencyAdapter.L
 
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
-                showErrors(t.getMessage());
+                showErrors(getString(R.string.api_failure, t.getLocalizedMessage()));
             }
         });
     }

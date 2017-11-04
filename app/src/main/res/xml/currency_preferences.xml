@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="NGN"
+        android:defaultValue="@string/user_choice_true"
+        android:key="@string/australian_dollars_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Naira"/>
+        android:title="@string/australian_dollars"/>
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="USD"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/canadian_dollars_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="US Dollars"/>
+        android:title="@string/canadian_dollars"/>
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="GBP"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/chinese_yen_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Pound Sterling"/>
+        android:title="@string/chinese_yen"/>
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="AUD"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/european_euro_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Australian Dollars"/>
+        android:title="@string/european_euro"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="CAD"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/ghanaian_cedi_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Canadian Dollars"/>
+        android:title="@string/ghanaian_cedi"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="EUR"
+        android:defaultValue="@string/user_choice_true"
+        android:key="@string/naira_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="European Euro"/>
+        android:title="@string/naira"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="CNY"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/israeli_new_shekel_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Chinese Yen"/>
+        android:title="@string/israeli_new_shekel"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="GHS"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/jamaican_dollar_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Ghanaian Cedi"/>
+        android:title="@string/jamaican_dollar"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="JMD"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/japanese_yen_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Jamaican Dollar"/>
+        android:title="@string/japanese_yen"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="JPY"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/kenyan_shilling_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Japanese Yen"/>
+        android:title="@string/kenyan_shilling"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="ILS"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/mauritian_rupee_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Israeli New Shekel"/>
+        android:title="@string/mauritian_rupee"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="KES"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/mexican_peso_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Kenyan Shilling"/>
+        android:title="@string/mexican_peso"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="MUR"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/norwegian_krone_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Mauritian Rupee"/>
+        android:title="@string/norwegian_krone"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="MXN"
+        android:defaultValue="@string/user_choice_true"
+        android:key="@string/pound_sterling_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Mexican Peso"/>
+        android:title="@string/pound_sterling"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="NOK"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/qatari_riyal_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Norwegian Krone"/>
+        android:title="@string/qatari_riyal"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="QAR"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/russian_ruble_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Qatari Riyal"/>
+        android:title="@string/russian_ruble"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="RUB"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/rwandan_fran_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Russian Ruble"/>
+        android:title="@string/rwandan_franc"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="RWF"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/swedish_krona_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Rwandan Franc"/>
+        android:title="@string/swedish_krona"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="SEK"
+        android:defaultValue="@string/user_choice_false"
+        android:key="@string/south_african_rand_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="Swedish krona"/>
+        android:title="@string/south_african_rand"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="ZAR"
+        android:defaultValue="@string/user_choice_true"
+        android:key="@string/us_dollars_key"
         android:summaryOff="@string/currency_summary_off"
         android:summaryOn="@string/currency_summary_on"
-        android:title="South African Rand"/>
+        android:title="@string/us_dollars"/>
 </PreferenceScreen>

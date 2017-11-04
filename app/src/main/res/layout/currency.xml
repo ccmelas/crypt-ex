@@ -13,13 +13,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:baselineAligned="false"
-        android:padding="12dp">
+        android:padding="@dimen/currency_parent_linear_layout_padding">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="@dimen/currency_child_linear_layout_margin_bottom">
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/currency_image_height"
                     android:src="@drawable/ic_bitcoin"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginBottom="@dimen/currency_image_margin_bottom"
                     android:contentDescription="@string/bitcoin_icon"/>
                 <TextView
                     android:id="@+id/btc_value"
@@ -50,7 +50,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/currency_image_height"
                     android:src="@drawable/ic_ethereum"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginBottom="@dimen/currency_image_margin_bottom"
                     android:contentDescription="@string/ethereum_icon"/>
                 <TextView
                     android:id="@+id/eth_value"
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/currency_name_text_size"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimaryDark"

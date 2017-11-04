@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="error_message">An error occurred. Please swipe down to refresh</string>
     <string name="network_error">Network error. Check your network and swipe down to refresh</string>
+    <string name="api_failure">%1$s. Please swipe down to refresh</string>
     <string name="currency_summary_off">Not Tracking</string>
     <string name="currency_summary_on">Tracking</string>
     <string name="ethereum_icon">Ethereum Icon</string>
@@ -10,4 +11,50 @@
     <string name="conversion_start_value">1</string>
     <string name="add_currency_label">Manage Currencies</string>
     <string name="conversion_activity_label">Crypto Calculator</string>
+
+    <!-- user choices values -->
+    <string name="user_choice_true" translatable="false">true</string>
+    <string name="user_choice_false" translatable="false">false</string>
+
+    <!-- currencies key-value pairs -->
+    <string name="naira_key" translatable="false">NGN</string>
+    <string name="naira">Naira</string>
+    <string name="us_dollars_key" translatable="false">USD</string>
+    <string name="us_dollars">US Dollars</string>
+    <string name="pound_sterling_key" translatable="false">GBP</string>
+    <string name="pound_sterling">Pound Sterling</string>
+    <string name="australian_dollars_key" translatable="false">AUD</string>
+    <string name="australian_dollars">Australian Dollars</string>
+    <string name="canadian_dollars_key" translatable="false">CAD</string>
+    <string name="canadian_dollars">Canadian Dollars</string>
+    <string name="european_euro_key" translatable="false">EUR</string>
+    <string name="european_euro">European Euro</string>
+    <string name="chinese_yen_key" translatable="false">CNY</string>
+    <string name="chinese_yen">Chinese Yen</string>
+    <string name="ghanaian_cedi_key" translatable="false">GHS</string>
+    <string name="ghanaian_cedi">Ghanaian Cedi</string>
+    <string name="jamaican_dollar_key" translatable="false">JMD</string>
+    <string name="jamaican_dollar">Jamaican Dollar</string>
+    <string name="japanese_yen_key" translatable="false">JPY</string>
+    <string name="japanese_yen">Japanese Yen</string>
+    <string name="israeli_new_shekel_key" translatable="false">ILS</string>
+    <string name="israeli_new_shekel">Israeli New Shekel</string>
+    <string name="kenyan_shilling_key" translatable="false">KES</string>
+    <string name="kenyan_shilling">Kenyan Shilling</string>
+    <string name="mauritian_rupee_key" translatable="false">MUR</string>
+    <string name="mauritian_rupee">Mauritian Rupee</string>
+    <string name="mexican_peso_key" translatable="false">MXN</string>
+    <string name="mexican_peso">Mexican Peso</string>
+    <string name="norwegian_krone_key" translatable="false">NOK</string>
+    <string name="norwegian_krone">Norwegian Krone</string>
+    <string name="qatari_riyal_key" translatable="false">QAR</string>
+    <string name="qatari_riyal">Qatari Riyal</string>
+    <string name="russian_ruble_key" translatable="false">RUB</string>
+    <string name="russian_ruble">Russian Ruble</string>
+    <string name="rwandan_fran_key" translatable="false">RWF</string>
+    <string name="rwandan_franc">Rwandan Franc</string>
+    <string name="swedish_krona_key" translatable="false">SEK</string>
+    <string name="swedish_krona">Swedish krona</string>
+    <string name="south_african_rand_key" translatable="false">ZAR</string>
+    <string name="south_african_rand">South African Rand</string>
 </resources>

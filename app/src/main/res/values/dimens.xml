@@ -1,6 +1,18 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="error_message_text_size">18sp</dimen>
+    <dimen name="content_main_padding">16dp</dimen>
+
     <dimen name="currency_image_height">24dp</dimen>
+    <dimen name="currency_image_margin_bottom">12dp</dimen>
+    <dimen name="currency_name_text_size">20sp</dimen>
     <dimen name="currency_card_corner_radius">12dp</dimen>
     <dimen name="currency_card_margin_bottom">10dp</dimen>
+    <dimen name="currency_parent_linear_layout_padding">12dp</dimen>
+    <dimen name="currency_child_linear_layout_margin_bottom">12dp</dimen>
+
+    <dimen name="conversion_screen_text_views_bottom_margin">16dp</dimen>
+    <dimen name="conversion_screen_padding">24dp</dimen>
+    <dimen name="conversion_result_text_size">26sp</dimen>
+    <dimen name="conversion_result_drawable_padding">16dp</dimen>
 </resources>
